@@ -1,0 +1,280 @@
+/* ---- palette (pastel mint) -------------------------------------------------------- */
+
+:root {
+  --sand: #f1f6f2;
+  --card: #ffffff;
+  --sage: #9cc5a9;
+  --sage-dk: #4a7259;
+  --sage-soft: #e2efe6;
+  --ink: #33403a;
+  --muted: #5f6e66;
+  --line: #ddeae1;
+
+  --radius: 14px;
+  --shadow: 0 1px 2px rgba(51, 64, 58, 0.05), 0 8px 24px rgba(51, 64, 58, 0.07);
+
+  --col: 720px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --sand: #171c19;
+    --card: #1f2622;
+    --sage: #9cc5a9;
+    --sage-dk: #b6d9c2;
+    --sage-soft: #2a3630;
+    --ink: #e4ebe6;
+    --muted: #94a399;
+    --line: #313b35;
+
+    --shadow: 0 1px 2px rgba(0, 0, 0, 0.2), 0 8px 24px rgba(0, 0, 0, 0.25);
+  }
+}
+
+/* ---- base ----------------------------------------------------------- */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--sand);
+  color: var(--ink);
+  font-family: "DM Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    Roboto, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+}
+
+.page {
+  max-width: var(--col);
+  margin: 0 auto;
+  padding: 88px 24px 64px;
+}
+
+/* ---- header --------------------------------------------------------- */
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  margin-bottom: 34px;
+}
+
+.monogram,
+.avatar {
+  flex: none;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+}
+
+.monogram {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--sage-soft);
+  color: var(--sage-dk);
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+.avatar {
+  object-fit: cover;
+}
+
+h1 {
+  margin: 0;
+  font-size: 2.1rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+.tagline {
+  margin: 6px 0 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+/* ---- intro ---------------------------------------------------------- */
+
+.intro {
+  margin-bottom: 60px;
+  padding-bottom: 36px;
+  border-bottom: 1px solid var(--line);
+}
+
+.intro p {
+  margin: 0;
+  font-size: 1.05rem;
+  color: var(--ink);
+  max-width: 62ch;
+}
+
+/* ---- sections ------------------------------------------------------- */
+
+section {
+  margin-bottom: 44px;
+}
+
+.label {
+  margin: 0 0 14px;
+  padding-left: 2px;
+  color: var(--sage-dk);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 6px 26px;
+}
+
+/* ---- entries -------------------------------------------------------- */
+
+.entry {
+  display: flex;
+  gap: 26px;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.entry:last-child {
+  border-bottom: none;
+}
+
+.rail {
+  flex: none;
+  width: 178px;
+  padding-top: 2px;
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.detail {
+  min-width: 0;
+}
+
+.detail h3 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.org {
+  margin: 3px 0 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.note {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 0.88rem;
+  max-width: 54ch;
+}
+
+.pills {
+  margin: 10px 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.pill {
+  background: var(--sage-soft);
+  color: var(--sage-dk);
+  border-radius: 999px;
+  padding: 3px 11px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
+/* ---- footer --------------------------------------------------------- */
+
+.footer {
+  margin-top: 56px;
+  padding-top: 28px;
+  border-top: 1px solid var(--line);
+}
+
+.footer p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+/* ---- scroll reveal --------------------------------------------------
+   Content is visible by default. script.js adds .js-reveal to <body>,
+   which is what hides it — so the page reads fine with JS off. */
+
+.js-reveal .reveal {
+  opacity: 0;
+  transform: translateY(8px);
+}
+
+.js-reveal .reveal.visible {
+  opacity: 1;
+  transform: none;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+/* ---- responsive ----------------------------------------------------- */
+
+@media (max-width: 600px) {
+  .page {
+    padding: 56px 20px 48px;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  h1 {
+    font-size: 1.75rem;
+  }
+
+  .card {
+    padding: 4px 20px;
+  }
+
+  .entry {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .rail {
+    width: auto;
+    padding-top: 0;
+    font-size: 0.78rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .js-reveal .reveal {
+    opacity: 1;
+    transform: none;
+  }
+
+  .js-reveal .reveal.visible {
+    transition: none;
+  }
+}
