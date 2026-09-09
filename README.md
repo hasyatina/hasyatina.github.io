@@ -55,6 +55,18 @@ comfortable to read.
   monogram looks fine on its own if you'd rather not.
 - **Update the year** in the footer at the bottom of `index.html`.
 
+## Hosting
+
+The site is deployed in two places from this same repo. Both update automatically
+when you push; you do not need to do anything different for either.
+
+- **GitHub Pages** — https://hasyatina.github.io/
+- **Vercel** — imported from this repo via the Vercel dashboard
+
+`vercel.json` holds the Vercel settings. There is no build step: `cleanUrls` just
+lets `/about` work as well as `/about.html` if you ever add more pages. GitHub Pages
+ignores this file entirely.
+
 ## Publishing it free on GitHub Pages
 
 1. Create a new repository on GitHub.
